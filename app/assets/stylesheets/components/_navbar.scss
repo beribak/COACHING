@@ -1,6 +1,11 @@
+.navbar {
+  background-color: transparent !important;
+  z-index: 1000;
+}
+
 .navbar-lewagon {
+  background-color: transparent !important;
   justify-content: space-between;
-  background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +14,24 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-brand {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 25px !important;
+  color: rgb(24, 24, 24) !important;
+}
+
+.nav-item {
+  color: rgb(57, 83, 83);
+  margin-left: 20px;
+}
+
+.nav-link {
+  color: rgb(57, 83, 83) !important;
+}
+
+.nav-item :hover {
+  color: rgb(115, 76, 128) !important;
 }

@@ -1,0 +1,8 @@
+<div class="bg-white p-4 w-25 m-3 rounded-3 shadow-lg">
+  <h3 class="mb-3">One more step</h3>
+  <p>Whats the level of your English at the moment?</p>
+  <%= simple_form_for(root_path) do |f| %>
+    <%= f.input :answer %>
+    <%= f.submit :Next, class: "btn btn-primary w-100 mt-2" %>
+  <% end %>
+</div>

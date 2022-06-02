@@ -1,0 +1,28 @@
+<div class="bg-white p-4 w-25 mr=0 rounded-3 shadow-lg sticky-lg-top w-100">
+
+  <h3 class="mb-3">Book this course</h3>
+
+  <div class="mb-3">
+    <p class="text-secondary mb-1"><small>OFFERED BY</small></p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="m-0">
+        <h5 class="mb-1 fw-bold"><%= @lesson.user.first_name %> <%= @lesson.user.last_name %></h5>
+        <p class="m-0"><%= @lesson.user.description %></p>
+      </div>
+      <div><%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-medium" %></div>
+    </div>
+
+  </div>
+
+  <div class="mb-3">
+    <p class="text-secondary m-0"><small>DATES</small></p>
+    <div class="d-flex justify-content-between align-items-center">
+      <h5 class="my-1"><%= @lesson.start_date.strftime("%a %d %b") %></h5>
+      <h5 class="my-1">-</h5>
+      <h5 class="my-1"><%= @lesson.end_date.strftime("%a %d %b") %></h5>
+    </div>
+  </div>
+
+  <%= link_to "Request", "#", class: "btn btn-lg btn-primary w-100 mt-2" %>
+
+</div>

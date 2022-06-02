@@ -1,0 +1,9 @@
+.card-links {
+  text-decoration: none;
+  color: rgb(63, 62, 62);
+
+  &:hover {
+    color: rgb(168, 75, 90);
+    text-decoration: none;
+  }
+}

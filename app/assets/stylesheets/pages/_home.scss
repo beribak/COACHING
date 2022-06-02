@@ -1,1 +1,59 @@
-// Specific CSS for your home-page
+.homepage {
+  width: 100%;
+  height: 100vh;
+  // background-image: url("blob-scene-haikei.png");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  // background-attachment: local;
+}
+.background {
+  background-image: url("blob-scene-haikei.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.ban-body {
+  padding: 70px;
+}
+
+.ban-body h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 75px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 30px;
+  padding-right: 250px;
+}
+
+.my_container {
+  padding-top: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 100px;
+}
+
+u {
+  color: rgb(115, 66, 138);
+  text-decoration: none;
+}
+
+.animation img {
+  width: 100%;
+  padding-right: 50px;
+}
