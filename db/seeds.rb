@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "creating database"
+Answer.destroy_all
 User.destroy_all
 Lesson.destroy_all
 Category.destroy_all
