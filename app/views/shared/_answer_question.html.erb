@@ -1,8 +1,15 @@
-<div class="bg-white p-4 w-25 m-3 rounded-3 shadow-lg">
+<div class="bg-white p-4 w-100 rounded-3 shadow-lg" style="display: none;" data-answers-target="answerbox">
   <h3 class="mb-3">One more step</h3>
-  <p>Whats the level of your English at the moment?</p>
   <%= simple_form_for(root_path) do |f| %>
+    <p><strong><%= @lesson.questions[0].content %></strong></p>
     <%= f.input :answer %>
-    <%= f.submit :Next, class: "btn btn-primary w-100 mt-2" %>
+
+    <p><strong><%= @lesson.questions[1].content  %></strong></p>
+    <%= f.input :answer %>
+
+    <p><strong><%= @lesson.questions[2].content  %></strong></p>
+    <%= f.input :answer, placeholder: "Your answer", label: false %>
+
+    <%= f.submit :Next, class: "btn btn-lg btn-primary w-100 mt-2" %>
   <% end %>
 </div>

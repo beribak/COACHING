@@ -1,37 +1,41 @@
+
 .navbar {
   background-color: transparent !important;
   z-index: 1000;
 }
-
 .navbar-lewagon {
   background-color: transparent !important;
   justify-content: space-between;
 }
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
-
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-
 .navbar-brand {
-  font-family: 'Manrope', sans-serif;
+  font-family: ‘Manrope’, sans-serif;
   font-weight: 500;
   font-size: 25px !important;
-  color: rgb(24, 24, 24) !important;
+  color: rgb(63, 40, 75) !important;
 }
-
 .nav-item {
-  color: rgb(57, 83, 83);
+  color: rgb(50, 32, 59);
   margin-left: 20px;
 }
-
 .nav-link {
-  color: rgb(57, 83, 83) !important;
+  color: rgb(50, 32, 59) !important;
 }
-
 .nav-item :hover {
-  color: rgb(115, 76, 128) !important;
+  color: rgb(77, 107, 158) !important;
+}
+.dropdown-menu {
+  background-color: rgb(255, 246, 252) !important;
+  border: 0px !important;
+  width: 30px !important;
+  border-radius: 2px !important;
+  min-width: 120px !important;
+}
+.dropdown-item{
+  color: rgb(50, 32, 59) !important;
 }

@@ -9,7 +9,8 @@
         </div>
       </div>
       <div class="rounded-5">
-        <%= image_tag "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3032&q=80", class:"w-100 rounded", style:"height: 225px; object-fit: cover;" %>
+        <%# <%= cl_image_tag @lesson.photo.key, height: 225px;, width: 100, crop: :fill, class: "object-fit-cover'" %>
+        <%= image_tag "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3032&q=80", class:"w-100 rounded", style:"height: 300px; object-fit: cover;" %>
       </div>
       <div class="bg-white my-4 py-3 px-4 shadow-lg rounded">
         <div class="d-flex align-items-center justify-content-between">
@@ -20,10 +21,9 @@
       </div>
     </div>
 
-    <div class="col-4 mt-4">
+    <div class="col-4 mt-4" data-controller="answers">
       <%= render "shared/book_course" %>
-      <div>
-      </div>
+      <%= render "shared/answer_question" %>
     </div>
 
   </div>

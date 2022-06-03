@@ -34,4 +34,9 @@ lesson4 = Lesson.create!( user: user1, category: category1, title: "English less
 lesson5 = Lesson.create!( user: user2, category: category2, title: "Ruby lesson", description: "Ruby lesson for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "32 Rue Blanche, 75009 Paris, France")
 lesson6 = Lesson.create!( user: user3, category: category3, title: "Psycology lesson", description: "Psycology lesson for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "25-1 Rue de Miromesnil, 75008 Paris, France")
 
+
+q1 = Question.create!(content: "Whats the level of your English at the moment?", lesson_id: lesson2.id)
+q2 = Question.create!(content: "Whats the level of your German at the moment?", lesson_id: lesson2.id)
+q3 = Question.create!(content: "Whats the level of your French at the moment?", lesson_id: lesson2.id)
+
 puts "finish seeding"
