@@ -1,8 +1,22 @@
-<div class="bg-white p-4 w-25 w-75 m-3 rounded-3 shadow-lg">
-  <h3 class="mb-3">Search for a course</h3>
-  <%= simple_form_for(root_path) do |f| %>
-    <%= f.input :location %>
-    <%= f.input :category, :collection => %w[Learn_Language IT Fighting] %>
-    <%= f.submit :Search, class: "btn btn-primary w-100 mt-2" %>
-  <% end %>
+<div class="home-search p-4 w-75 m-3 rounded-3 shadow-lg">
+  <h3 class="mb-3 font-family: 'Manrope', sans-serif;">Search for a course</h3>
+  <div class="wrap">
+    <div class="search">
+      <%= form_tag lessons_path, method: :get do %>
+        <%= text_field_tag :city,
+          params[:city],
+          class: "searchTerm",
+          placeholder: "Choose the location"
+        %>
+        <%= select_tag :category,
+          options_for_select(Category.pluck(:name)),
+          class: "searchTerm",
+          placeholder: "Choose the category"
+        %>
+        <%= button_tag type: 'submit', class: "btn btn-primary w-100 mt-2" do %>
+          <i class="fa fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
