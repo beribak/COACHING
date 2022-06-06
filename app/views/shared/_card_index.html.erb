@@ -1,11 +1,11 @@
 
-<div class="mb-4 rounded">
-  <div>
+<div class="mb-4" style="border-radius: 10px;">
+  <div style="border-radius: 10px;">
     <%# <%= cl_image_tag @lesson.photo.key, style:"width: 400px; object-fit: cover;" %>
-    <%= image_tag "https://www.sgl28.com/wp-content/uploads/2020/10/ruby.jpeg", class:"rounded", style:"width: 401px; object-fit: cover;" %>
+    <%= image_tag "https://www.sgl28.com/wp-content/uploads/2020/10/ruby.jpeg", class:"rounded", style:"width: 401px; object-fit: cover; border-radius: 10px 10px 0 0 !important;" %>
   </div>
 
-  <div class="bg-white p-4 rounded shadow-lg " style="width: 400px;">
+  <div class="bg-white p-4 rounded shadow-lg " style="width: 400px; height:150px; border-radius: 0 0 10px 10px !important;">
     <div class="d-flex align-items-center justify-content-between rounded">
       <div class="d-flex align-items-center rounded">
         <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-small" %>
@@ -14,8 +14,8 @@
       <div class="badge alert-danger"><%= lesson.places %>/10 places available</div>
     </div>
 
-    <div class="d-flex align-items-center justify-content-between mt-2 rounded">
-      <h5 class="mt-2"><%= lesson.description %></h5>
+    <div class="d-flex align-items-center justify-content-between mt-2 rounded" style="border-radius: 0 0 10px 10px; ">
+      <h5 class="mt-2"><%= lesson.title %></h5>
       <p class="m-0"><%= lesson.start_date.strftime("%a %d %b") %> - <%= lesson.end_date.strftime("%a %d %b")  %></p>
     </div>
   </div>

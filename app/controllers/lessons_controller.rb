@@ -1,17 +1,19 @@
 class LessonsController < ApplicationController
   def index
     category = Category.find_by(name: params[:category])
+
     if params[:category].present?
-      @lessons = Lesson.where(category: category)
+        @lessons = Lesson.where(category: category)
       else
-      @lessons = Lesson.all
+        @lessons = Lesson.all
     end
-      @markers = @lessons.map do |lesson|
-        {
-          lat: lesson.latitude,
-          lng: lesson.longitude
-        }
-      end
+
+    @markers = @lessons.map do |lesson|
+      {
+        lat: lesson.latitude,
+        lng: lesson.longitude
+      }
+    end
   end
 
   def new

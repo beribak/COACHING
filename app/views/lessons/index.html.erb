@@ -2,7 +2,7 @@
 <div class="index">
  <div class="container">
   <div class="search">
-      <%= form_tag lessons_path, id:"bar", class: "bar p-2 my-3 rounded-pill", method: :get do %>
+      <%= form_tag lessons_path, id:"bar", class: "bar p-2 my-3 rounded col-8", method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "searchTerm ",
@@ -18,15 +18,15 @@
   <div class="row p-0">
     <div class="row p-0 col-8">
         <% @lessons.each do |lesson| %>
-          <div class="col-6">
-              <%= link_to lesson_path(lesson), class: "card-links" do %>
+          <div class="col-6 p-4">
+              <%= link_to lesson_path(lesson), class: "card-links", style: "border-radius: 10px;" do %>
                 <%= render "shared/card_index", lesson: lesson %>
               <% end %>
           </div>
         <% end %>
     </div>
-    <div class="col-4">
-      <div style="width: 70vh; height: 70vh;  position:fixed"
+    <div class="col-4 p-4">
+      <div style="width: 100%; height: 70vh;  position: sticky; top: 10px;"
             data-controller="mapbox"
             data-mapbox-markers-value="<%= @markers.to_json %>"
             data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
