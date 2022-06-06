@@ -1,11 +1,39 @@
 class LessonsController < ApplicationController
   def index
+
     category = Category.find_by(name: params[:category])
 
-    if params[:category].present?
-        @lessons = Lesson.where(category: category)
-      else
-        @lessons = Lesson.all
+  #   if params[:category].present?
+  #     @lessons = Lesson.where(category: category)
+  #   else
+  #     @lessons = Lesson.all
+  #   end
+
+  #   if params[:city].present?
+  #     @lessons = Lesson.near(params[:city], 20)
+  #   end
+  #   @markers = @lessons.map do |lesson|
+  #     {
+  #       lat: lesson.latitude,
+  #       lng: lesson.longitude
+  #     }
+  #   end
+  # end
+
+    if params[:category].present? && params[:city].present?
+      lessons_city = Lesson.near(params[:city], 20)
+      lessons_cat  = Lesson.where(category: category)
+
+      @lessons = []
+      Lesson.all.each do |lesson|
+        @lessons << lesson if (lessons_cat.include?(lesson) && lessons_city.include?(lesson))
+      end
+    elsif params[:city].present?
+      @lessons = Lesson.near(params[:city], 20)
+    elsif params[:category].present?
+      @lessons = Lesson.where(category: category)
+    else
+      @lessons = Lesson.all
     end
 
     @markers = @lessons.map do |lesson|
@@ -15,6 +43,12 @@ class LessonsController < ApplicationController
       }
     end
   end
+    # category = Category.find_by(name: params[:category])
+    # if params[:category].present?
+    #   @lessons = Lesson.where(category: category)
+    #   else
+    #   @lessons = Lesson.all
+    # end
 
   def new
     @lesson = Lesson.new
