@@ -23,3 +23,56 @@
   position: absolute;
 
 }
+
+.search {
+  width: 96%;
+  position: relative;
+  display: flex;
+  padding-top: 10px;
+}
+
+.searchTerm {
+  width: 20rem;
+  border: none;
+  border-right: none;
+  padding: 15px;
+  height: 40px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  background-color: white;
+  margin-left: 15px;
+}
+
+.searchTerm:focus {
+  color: rgb(115, 66, 138);
+}
+
+.searchButton {
+  width: 150px;
+  height: 40px;
+  border: 1px solid rgb(115, 66, 138);
+  background: rgb(115, 66, 138);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.searchcat {
+
+  width: 250px;
+  height: 40px;
+  border: 1px solid rgb(115, 66, 138);
+  background: rgb(115, 66, 138);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+
+}
+
+#bar {
+  background-color: rgb(115, 66, 138);
+}

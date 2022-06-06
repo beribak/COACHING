@@ -1,13 +1,19 @@
 <div class="background"></div>
 <div class="index">
  <div class="container">
-  <%= form_tag(lessons_path, method: :get, class:"row col-8 bg-white p-3 my-3 align-items-center  rounded-pill shadow-sm d-flex justify-content-between") do %>
-      <div>
-      <%= text_field_tag :city, "city", class:"" %>
-      <%= select_tag(:category, options_for_select(Category::CATEGORIES)) %>
-      <%= submit_tag("Search") %>
-      </div>
-  <% end %>
+  <div class="search">
+      <%= form_tag lessons_path, id:"bar", class: "bar p-2 my-3 rounded-pill", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "searchTerm ",
+          placeholder: "Choose the location"
+        %>
+        <%= select_tag(:category, options_for_select(Category::CATEGORIES), class: "searchcat") %>
+        <%= button_tag type: 'submit', class: "searchButton" do %>
+          <i class="fa fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
   <h3>Our courses:</h3>
   <div class="row p-0">
     <div class="row p-0 col-8">
