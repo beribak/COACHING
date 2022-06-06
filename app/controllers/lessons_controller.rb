@@ -56,6 +56,8 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+    @answer = Answer.new
+    @questions = @lesson.questions
   end
 
   def create

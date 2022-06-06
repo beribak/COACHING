@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "creating database"
+Answer.destroy_all
 User.destroy_all
 Lesson.destroy_all
 Category.destroy_all
@@ -27,12 +28,12 @@ category2 = Category.create( name:"Programming" )
 category3 = Category.create( name:"Life Coaching" )
 
 puts "creating lessons"
-lesson1 = Lesson.create!( user: user1, category: category1, title: "English lesson", description: "English lesson for beginners", places: 10, start_date: "2023-02-04", end_date: "2023-05-04", address: "37 Rue Rodier, 75009 Paris, France")
-lesson2 = Lesson.create!( user: user2, category: category2, title: "Ruby lesson", description: "Ruby lesson for beginners", places: 10, start_date: "2023-02-04", end_date: "2023-05-04", address: "32 Rue Blanche, 75009 Paris, France")
-lesson3 = Lesson.create!( user: user3, category: category3, title: "Psycology lesson", description: "Psycology lesson for beginners", places: 10, start_date: "2023-02-04", end_date: "2023-05-04", address: "25-1 Rue de Miromesnil, 75008 Paris, France")
-lesson4 = Lesson.create!( user: user1, category: category1, title: "English lesson", description: "English  for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "37 Rue Rodier, 75009 Paris, France")
-lesson5 = Lesson.create!( user: user2, category: category2, title: "Ruby lesson", description: "Ruby lesson for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "32 Rue Blanche, 75009 Paris, France")
-lesson6 = Lesson.create!( user: user3, category: category3, title: "Psycology lesson", description: "Psycology lesson for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "25-1 Rue de Miromesnil, 75008 Paris, France")
+lesson1 = Lesson.create!( user: user1, category: category1, title: "English / beginner", description: "English lesson for beginners", places: 10, start_date: "2023-02-04", end_date: "2023-05-04", address: "37 Rue Rodier, 75009 Paris, France")
+lesson2 = Lesson.create!( user: user2, category: category2, title: "Ruby / beginner", description: "Ruby lesson for beginners", places: 10, start_date: "2023-02-04", end_date: "2023-05-04", address: "32 Rue Blanche, 75009 Paris, France")
+lesson3 = Lesson.create!( user: user3, category: category3, title: "Psycology / beginner", description: "Psycology lesson for beginners", places: 10, start_date: "2023-02-04", end_date: "2023-05-04", address: "25-1 Rue de Miromesnil, 75008 Paris, France")
+lesson4 = Lesson.create!( user: user1, category: category1, title: "English / advance", description: "English  for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "37 Rue Rodier, 75009 Paris, France")
+lesson5 = Lesson.create!( user: user2, category: category2, title: "Ruby  / adavance", description: "Ruby lesson for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "32 Rue Blanche, 75009 Paris, France")
+lesson6 = Lesson.create!( user: user3, category: category3, title: "Psycology  / advance", description: "Psycology lesson for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "25-1 Rue de Miromesnil, 75008 Paris, France")
 
 
 q1 = Question.create!(content: "Whats the level of your English at the moment?", lesson_id: lesson2.id)
