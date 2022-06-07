@@ -21,10 +21,19 @@
       </div>
     </div>
 
+
+
     <div class="col-4 mt-4" data-controller="answers">
       <%= render "shared/book_course" %>
       <%= render "shared/answer_question" %>
     </div>
 
+      <div>
+      <ul class="list-group">
+        <% @lesson.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.description %> <%= review.rating %></li>
+        <% end %>
+        </ul>
+    </div>
   </div>
 </div>
