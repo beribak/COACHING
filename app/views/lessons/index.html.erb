@@ -3,8 +3,8 @@
  <div class="container">
   <div class="search">
       <%= form_tag lessons_path, id:"bar", class: "bar p-2 my-3 rounded col-8", method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
+        <%= text_field_tag :city,
+          params[:city],
           class: "searchTerm ",
           placeholder: "Choose the location"
         %>
