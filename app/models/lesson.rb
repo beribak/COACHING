@@ -6,4 +6,11 @@ class Lesson < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   has_many :questions, dependent: :destroy
   has_one_attached :photo
+
+  def available_places
+    all  = self.places
+    took = Booking.where(lesson: self).count
+
+    all - took
+  end
 end
