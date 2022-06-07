@@ -9,7 +9,7 @@ class Lesson < ApplicationRecord
 
   def available_places
     all  = self.places
-    took = Booking.where(lesson: self).count
+    took = Booking.where(lesson: self, status: true).count
 
     all - took
   end
