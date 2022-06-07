@@ -7,4 +7,11 @@ class Lesson < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_one_attached :photo
   has_many :reviews, dependent: :destroy
+
+  def available_places
+    all  = self.places
+    took = Booking.where(lesson: self).count
+
+    all - took
+  end
 end

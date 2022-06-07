@@ -6,6 +6,8 @@ class AnswersController < ApplicationController
     @answer.user = current_user
     @lesson = Lesson.find(@question.lesson.id)
 
+    @booking = Booking.create!(status: false, user_id: current_user.id, lesson_id: @lesson.id)
+
     if @answer.save
       redirect_to lesson_path(@lesson)
     else
