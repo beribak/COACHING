@@ -1,18 +1,82 @@
-<div class="bg-white p-4 w-75 h-100 m-3">
-  <h3 class="mb-3 text-secondary">Activity</h3>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <%= link_to "All", "#", class: "nav-link active" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Pending", "#", class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Resolved", "#", class: "nav-link" %>
-    </li>
-  </ul>
+<div class="bg-white col-9 h-100">
+  <div class="m-3">
+    <div class="d-flex align-items-center justify-content-between">
+      <h5 class="m-2 text-secondary"><strong>ACTIVITY</strong></h5>
+      <h5 class="m-2 text-secondary"><%= Date.today %></h5>
+    </div>
+  </div>
 
-  <%# CARRD GRID BELOW %>
+  <hr>
+
+  <div class="my-3">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="true">Pending</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Confirmed</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
 
 
+
+      <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+        <%# PENDING %>
+        <% if current_user.refugee %>
+          <% current_user.bookings.where(status: false).each do |b| %>
+            <%= render "shared/card_dashboard_l", lesson: b %>
+          <% end %>
+
+        <% else %>
+          <% current_user.lessons.each do |l| %>
+            <% if l.questions[2] %>
+              <div class="m-3 p-3 bg-light shadow-1 rounded-5">
+                <h4><%= l.title %></h4>
+                <p><strong><%= l.questions[2].content %></strong></p>
+
+                <% l.bookings.where(status: false).each do |b|%>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-small mr-1" %>
+                      <p class="m-0"> <strong class= "m-0"><%= b.user.first_name %></strong> answers:</p class="m-0">
+                    </div>
+                    <%= link_to "Accept", "#", class: "btn btn-sm btn-primary" %>
+                  </div>
+
+                  <% b.user.answers.each do |a| %>
+                    <div>
+                      <%#= a.question.content %>
+                      <p>"<%= a.content %>"</p>
+                    </div>
+                  <% end %>
+                <% end %>
+
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+        <%# CONFIRMED %>
+        <% if current_user.refugee %>
+        <% current_user.bookings.each do |b| %>
+          <%= b %>
+        <% end %>
+        <% else %>
+          <% current_user.lessons.each do |l| %>
+            <% l.bookings.where(status: true).each do |b|%>
+              <%= b %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
 </div>
+
+
+
