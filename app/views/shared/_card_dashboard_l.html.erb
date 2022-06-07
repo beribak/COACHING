@@ -1,0 +1,16 @@
+<div class="m-3">
+  <div class="p-4 rounded-5 bg-white ">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-small" %>
+        <p class="my-0 mx-2"><strong><%= lesson.user.first_name %> <%= lesson.user.last_name %></strong></p>
+      </div>
+      <div class="badge alert-danger"><%= lesson.places %></div>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-between mt-2">
+      <h5 class="mt-2"><%= lesson.title %></h5>
+      <p class="m-0"><%= lesson.start_date.strftime("%a %d %b") %> - <%= lesson.end_date.strftime("%a %d %b")  %></p>
+    </div>
+  </div>
+</div>
