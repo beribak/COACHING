@@ -1,0 +1,24 @@
+<div class="container" style="margin-top: 80px;">
+  <div class="form_new">
+    <h2 style="margin-bottom: 30px;">Create a new coaching post</h2>
+    <%= simple_form_for(@lesson) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="form-inputs">
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :category, as: :select, collection: ["Learn new language", "Programming", "Life Coaching"]%>
+        <%= f.input :places %>
+        <%= f.input :address %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      </div>
+
+      <div class="form-actions text-center">
+        <%= f.button :submit, class: "btn btn-primary w-25 mt-2"%>
+      </div>
+    <% end %>
+  </div>
+</div>

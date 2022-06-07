@@ -3,23 +3,6 @@ class LessonsController < ApplicationController
 
     category = Category.find_by(name: params[:category])
 
-  #   if params[:category].present?
-  #     @lessons = Lesson.where(category: category)
-  #   else
-  #     @lessons = Lesson.all
-  #   end
-
-  #   if params[:city].present?
-  #     @lessons = Lesson.near(params[:city], 20)
-  #   end
-  #   @markers = @lessons.map do |lesson|
-  #     {
-  #       lat: lesson.latitude,
-  #       lng: lesson.longitude
-  #     }
-  #   end
-  # end
-
     if params[:category].present? && params[:city].present?
       lessons_city = Lesson.near(params[:city], 20)
       lessons_cat  = Lesson.where(category: category)
@@ -43,12 +26,6 @@ class LessonsController < ApplicationController
       }
     end
   end
-    # category = Category.find_by(name: params[:category])
-    # if params[:category].present?
-    #   @lessons = Lesson.where(category: category)
-    #   else
-    #   @lessons = Lesson.all
-    # end
 
   def new
     @lesson = Lesson.new
@@ -73,6 +50,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:title, :description, :places, :start_date, :end_date, :category, :photo)
+    params.require(:lesson).permit(:title, :description, :places, :start_date, :end_date, :category, :address, :photo)
   end
 end
