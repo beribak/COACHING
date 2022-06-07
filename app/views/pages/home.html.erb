@@ -1,8 +1,8 @@
 <div class="background"></div>
 <div class="container">
   <div class="homepage" style="vertical-align: middle;">
-    <div class="my_container">
     <div class="row">
+
       <div class="col-8">
         <div class="ban-body">
           <h1> Let’s make someone’s life better. <u>Together.</u> </h1>
@@ -10,11 +10,13 @@
           <p> Become a coach to offer free coaching sessions to refugees. </p>
         </div>
       </div>
+
       <div class="col-4">
         <div class="animation">
           <%= image_tag("illustration.svg") %>
         </div>
       </div>
+
       <div class="col-8">
         <div class="info p-4 m-3 mb-5 rounded shadow-lg" style="width: 800px;">
           <div class="d-flex align-items-center justify-content-between">
@@ -24,9 +26,13 @@
           </div>
         </div>
       </div>
-      <div class="col-4 sticky-top">
-        <%= render "shared/search_form_home" %>
+
+      <div class="sticky-top col-4">
+        <div class="search-widget">
+          <%= render "shared/search_form_home" %>
+        </div>
       </div>
+
       <div class="col-8">
         <div class="info p-4 m-3 mb-5 rounded shadow-lg" style="width: 800px;">
           <div class="d-flex align-items-center justify-content-between">
@@ -36,6 +42,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-8">
         <div class="info p-4 m-3 mb-5 rounded shadow-lg" style="width: 800px;">
           <div class="d-flex align-items-center justify-content-between">
@@ -55,13 +62,15 @@
           </div>
         </div>
       </div>
-
+    </div>
+    <div class="row">
       <div class="bottom-box">
         <div class="col-6">
           <div class="animation">
             <%= image_tag("coach.svg") %>
           </div>
         </div>
+
         <div class="col-6">
           <div class="bottom-body">
             <h1> Let’s make someone’s life better. <u>Together.</u> </h1>
@@ -70,7 +79,10 @@
             <%= link_to "Become a coach", "", class: "btn btn-lg btn-primary w-100 mt-2" %>
           </div>
         </div>
+
       </div>
+
     </div>
+
   </div>
 </div>

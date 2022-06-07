@@ -1,5 +1,7 @@
 .homepage {
   height: 100vh;
+  margin: 0 auto;
+  width: 90%;
   // background-image: url("blob-scene-haikei.png");
   // background-size: cover;
   // background-repeat: no-repeat;
@@ -20,12 +22,17 @@
   left: 0;
 }
 
-.my_container {
-  padding-top: 20px;
+.visible {
+  z-index: 10;
+  position: relative;
 }
 
+// .row .bottom-box {
+//   width: 100vw;
+// }
+
 .ban-body {
-  padding: 70px;
+  padding: 0px;
 }
 
 .ban-body h1 {
@@ -44,6 +51,10 @@
   display: flex;
   justify-content: space-between;
   padding-top: 100px;
+}
+
+.search-widget {
+  width: 100%;
 }
 
 u {

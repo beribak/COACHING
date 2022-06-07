@@ -1,19 +1,19 @@
-<div class="home-search p-4 w-75 m-3 rounded-3 shadow-lg">
+<div class="home-search p-4 m-3 rounded-3 shadow-lg">
   <h3 class="mb-3 font-family: 'Manrope', sans-serif;">Search for a course</h3>
   <div class="wrap">
-    <div class="search">
+    <div class="searchForm">
       <%= form_tag lessons_path, method: :get do %>
         <%= text_field_tag :city,
           params[:city],
-          class: "searchTerm",
+          class: "searchTermHome",
           placeholder: "Choose the location"
         %>
         <%= select_tag :category,
           options_for_select(Category.pluck(:name)),
-          class: "searchTerm",
+          class: "searchTermHome",
           placeholder: "Choose the category"
         %>
-        <%= button_tag type: 'submit', class: "btn btn-primary w-100 mt-2" do %>
+        <%= button_tag type: 'submit', class: "btn btn-primary w-100 mt-3" do %>
           <i class="fa fa-search"></i>
         <% end %>
       <% end %>

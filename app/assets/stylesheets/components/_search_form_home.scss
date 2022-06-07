@@ -1,23 +1,33 @@
 .btn-primary {
-    background-color: rgb(120, 50, 119) !important;
-    border: none !important;
-    color: white;
-    width: 75%;
+  background-color: rgb(120, 50, 119) !important;
+  border: none !important;
+  color: white;
   }
 
-  .searchTerm {
-    margin: 4px;
-    color:rgb(43, 18, 73);
-    border-style:inherit;
-    border-color: rgb(80, 82, 94);
-    border-width: 1px;
-    border-radius: 2px;
-    width: 75%;
-    font-family: "Manrope", sans-serif;
-    font-size: 15px;
-    padding: 4px;
+.searchTermHome {
+  width: 20rem;
+  border: none;
+  border-right: none;
+  height: 40px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  background-color: white;
+  margin-left: 5px;
+
+  margin: 4px;
+  color:rgb(43, 18, 73);
+  border-color: rgb(80, 82, 94);
+  border-width: 1px;
+  border-radius: 2px;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
   }
 
-  .home-search {
-    background-color: rgba(255, 255, 255, 0.8);
+.home-search {
+  background-color: rgba(255, 255, 255, 0.8);
+
   }
+
+.searchHome {
+  width: 100% !important;
+}
