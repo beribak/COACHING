@@ -35,9 +35,29 @@ lesson4 = Lesson.create!( user: user1, category: category1, title: "English / ad
 lesson5 = Lesson.create!( user: user2, category: category2, title: "Ruby  / adavance", description: "Ruby lesson for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "32 Rue Blanche, 75009 Paris, France")
 lesson6 = Lesson.create!( user: user3, category: category3, title: "Psycology  / advance", description: "Psycology lesson for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "25-1 Rue de Miromesnil, 75008 Paris, France")
 
+puts "creating questions"
+q1 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson1.id)
+q2 = Question.create!(content: "Why do you need to take this lesson ?", lesson_id: lesson1.id)
+q3 = Question.create!(content: "Whats the level of your English at the moment?", lesson_id: lesson1.id)
 
-q1 = Question.create!(content: "Whats the level of your English at the moment?", lesson_id: lesson2.id)
-q2 = Question.create!(content: "Whats the level of your German at the moment?", lesson_id: lesson2.id)
-q3 = Question.create!(content: "Whats the level of your French at the moment?", lesson_id: lesson2.id)
+q4 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson2.id)
+q5 = Question.create!(content: "Why do you need to take this lesson ?", lesson_id: lesson2.id)
+q6 = Question.create!(content: "Whats the level of your Ruby at the moment?", lesson_id: lesson2.id)
+
+q7 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson3.id)
+q8 = Question.create!(content: "Why do you need to take this lesson ?", lesson_id: lesson3.id)
+q9 = Question.create!(content: "Whats the level of your Psycology at the moment?", lesson_id: lesson3.id)
+
+q10 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson4.id)
+q11 = Question.create!(content: "Why do you need to take this lesson ?", lesson_id: lesson4.id)
+q12 = Question.create!(content: "Whats the level of your English  at the moment?", lesson_id: lesson4.id)
+
+q13 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson5.id)
+q14 = Question.create!(content: "Why do you need to take this lesson ?", lesson_id: lesson5.id)
+q15 = Question.create!(content: "Whats the level of your Ruby at the moment?", lesson_id: lesson5.id)
+
+q16 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson6.id)
+q17 = Question.create!(content: "Why do you need to take this lesson ?", lesson_id: lesson6.id)
+q18 = Question.create!(content: "Whats the level of your Psycology at the moment?", lesson_id: lesson6.id)
 
 puts "finish seeding"
