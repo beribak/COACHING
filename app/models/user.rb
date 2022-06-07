@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :lessons, dependent: :destroy
   has_one_attached :photo
+  has_many :bookings
+  has_many :answers
 end

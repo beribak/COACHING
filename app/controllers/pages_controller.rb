@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 
-  def ui_kit
+  def accept_booking
+    @booking = Booking.find(params[:id])
+    @booking.update!(status: true)
+    redirect_to dashboard_path, flash: {notice: "Accepted!"}
   end
 end
