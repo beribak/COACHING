@@ -4,7 +4,7 @@
   <div class="m-3">
     <div class="d-flex align-items-center justify-content-between">
       <h5 class="m-2 text-secondary"><strong>ACTIVITY</strong></h5>
-      <h5 class="m-2 text-secondary"><%= Date.today %></h5>
+      <h5 class="m-2 text-secondary"><%= Date.today.strftime("%a %d %b") %></h5>
     </div>
   </div>
 
@@ -24,6 +24,8 @@
 
 
       <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+
+        <div></div>
         <%# PENDING %>
 
         <%# REFUGEE %>
@@ -32,7 +34,7 @@
 
           <div class="m-3 p-3 bg-light shadow-1 rounded-5">
             <div class="d-flex align-items-center justify-content-between">
-              <h4 class="m-2"><%= b.lesson.title %></h4>
+              <h4 class="m-2"><%= b.lesson.title %>  - <%= b.lesson.user.first_name %></h4>
               <h4 class="m-0"><span class="badge alert-success"><%= b.lesson.available_places  %> places available</span></h4>
             </div>
             <% current_user.bookings.where(status: false).each do |c|%>
@@ -42,7 +44,7 @@
                   <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-small m-2" %>
                   <p class="m-0"> <strong class= "m-0"><%= c.user.first_name %></strong></p class="m-0">
                 </div>
-                <strong><p class="text-secondary my-2 text-center">Confirmed ✓</p></strong>
+                <strong><p class="text-secondary my-2 text-center">Pending</p></strong>
               </div>
 
                 <div class="container">
@@ -85,7 +87,7 @@
                       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-small m-2" %>
                       <p class="m-0"> <strong class= "m-0"><%= b.user.first_name %></strong> answers:</p class="m-0">
                     </div>
-                    <%= link_to "Accept", accept_booking_path(b), method: :patch, class: "btn btn-sm btn-primary" %>
+                    <%= link_to "Accept", accept_booking_path(b), method: :patch, class: "btn btn-primary w-25" %>
                   </div>
 
                   <% b.user.answers.each do |a| %>
@@ -107,10 +109,10 @@
 
         <%# REFUGEE %>
         <% if current_user.refugee %>
-        <% current_user.bookings.each do |b| %>
+        <% current_user.bookings.where(status: true).each do |b| %>
           <div class="m-3 p-3 bg-light shadow-1 rounded-5">
             <div class="d-flex align-items-center justify-content-between">
-              <h4 class="m-2"><%= b.lesson.title %></h4>
+              <h4 class="m-2"><%= b.lesson.title %> - <%= b.lesson.user.first_name %></h4>
               <h4 class="m-0"><span class="badge alert-success"><%= b.lesson.available_places  %> places available</span></h4>
             </div>
 
@@ -152,6 +154,9 @@
           <% end %>
         <% end %>
       </div>
+
+
+
     </div>
 
   </div>

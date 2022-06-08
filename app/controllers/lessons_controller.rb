@@ -41,7 +41,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new(lesson_params)
     @lesson.user = current_user
     if @lesson.save
-      redirect_to dashboard_path
+      redirect_to new_lesson_question_path(@lesson)
     else
       render :new
     end
@@ -50,6 +50,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:title, :description, :places, :start_date, :end_date, :category, :address, :photo)
+    params.require(:lesson).permit(:title, :description, :places, :start_date, :end_date, :category_id, :address, :photo)
   end
 end
