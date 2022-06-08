@@ -14,6 +14,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def avg_rating
+    @review.average(:rating)
+  end
+end
+
+
   private
 
   def review_params
