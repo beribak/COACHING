@@ -27,9 +27,6 @@ class ReviewsController < ApplicationController
     end
     output.html_safe
   end
-end
-
-
 
   private
 
