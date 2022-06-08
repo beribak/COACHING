@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :lessons do
     resources :questions, only: [:new, :create]
-    resources :reviews
+    resources :reviews, only: [:create]
   end
 
   patch ':id/accept_booking', to: 'pages#accept_booking', as: 'accept_booking'

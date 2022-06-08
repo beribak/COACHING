@@ -6,14 +6,14 @@ Lesson.destroy_all
 Category.destroy_all
 
 puts "creating users"
-user1 = User.create( first_name: "Alijah", last_name: "Proctor", email: "alijahl@gmailcom", password: "Lewagon123", description: "Hello! I am Alijah and I will teach you English.", coach: true, refugee: false )
-user2 = User.create( first_name: "Barbara", last_name: "Adkins", email: "barbara@gmailcom", password: "Lewagon123", description: "Hello! I am Barbara and I will teach you Ruby.", coach: true, refugee: false )
-user3 = User.create( first_name: "Fiona", last_name: "Fields", email: "fiona@gmailcom", password: "Lewagon123", description: "Hello! I am Fiona and I will teach you Psycology.", coach: true, refugee: false )
+user1 = User.create( first_name: "Alijah", last_name: "Proctor", email: "alijahl@gmail.com", password: "Lewagon123", description: "Hello! I am Alijah and I will teach you English.", coach: true, refugee: false )
+user2 = User.create( first_name: "Barbara", last_name: "Adkins", email: "barbara@gmail.com", password: "Lewagon123", description: "Hello! I am Barbara and I will teach you Ruby.", coach: true, refugee: false )
+user3 = User.create( first_name: "Fiona", last_name: "Fields", email: "fiona@gmail.com", password: "Lewagon123", description: "Hello! I am Fiona and I will teach you Psycology.", coach: true, refugee: false )
 
 
-user5 = User.create( first_name: "Marley", last_name: "Hoover", email: "marley@gmailcom", password: "Lewagon123", description: "Hello! I am Marley, I come from Syria", coach: false, refugee: true )
-user6 = User.create( first_name: "Carlee", last_name: "Ware", email: "carlee@gmailcom", password: "Lewagon123", description: "Hello! I am Carlee, I come from Sri Lanka", coach: false, refugee: true )
-user7 = User.create( first_name: "Darryl", last_name: "Peck", email: "darryl@gmailcom", password: "Lewagon123", description: "Hello! I am Darryl, I come from Algeria", coach: false, refugee: true )
+user5 = User.create( first_name: "Marley", last_name: "Hoover", email: "marley@gmail.com", password: "Lewagon123", description: "Hello! I am Marley, I come from Syria", coach: false, refugee: true )
+user6 = User.create( first_name: "Carlee", last_name: "Ware", email: "carlee@gmail.com", password: "Lewagon123", description: "Hello! I am Carlee, I come from Sri Lanka", coach: false, refugee: true )
+user7 = User.create( first_name: "Darryl", last_name: "Peck", email: "darryl@gmail.com", password: "Lewagon123", description: "Hello! I am Darryl, I come from Algeria", coach: false, refugee: true )
 
 puts "creating categories"
 category1 = Category.create( name:"Learn new language" )
