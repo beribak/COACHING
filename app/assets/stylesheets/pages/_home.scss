@@ -1,23 +1,7 @@
 .homepage {
   height: 100vh;
-  // background-image: url("blob-scene-haikei.png");
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  z-index: 10;
-  position: relative;
-  // top: 0;
-  // background-attachment: local;
-}
-.background {
-  background-image: url("blob-scene-haikei.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
+  margin: 0 auto;
+  width: 92%;
 }
 
 .my_container {
@@ -25,12 +9,14 @@
 }
 
 .ban-body {
-  padding: 70px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  padding-left: 10px;
 }
 
 .ban-body h1 {
   font-family: "Manrope", sans-serif;
-  font-size: 75px;
+  font-size: 72px;
   font-weight: 600;
 }
 
@@ -40,32 +26,24 @@
   padding-top: 30px;
   padding-right: 250px;
 }
-.row_homepage {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 100px;
-  z-index: 10;
-  position: relative;
-}
 
-u {
+.homepage u {
   color: rgb(115, 66, 138);
   text-decoration: none;
 }
 
-.animation img {
-  width: 100%;
-  padding-right: 50px;
+.animation {
+  margin: 30px;
 }
 
-.home_row {
-  display: flex;
-  justify-content: space-between;
+.animation img {
+  padding-top: 50px;
+  width: 100%;
+  padding-bottom: 30px;
 }
 
 .info {
-  background-color: rgba(255, 255, 255, 0.8);
-  margin-left: 59px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .info p {
@@ -73,15 +51,24 @@ u {
   font-family: 'Roboto', sans-serif;
 }
 
-.bottom-box {
-  background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: space-between;
-  position: block;;
+.search-widget {
+  width: 100%;
 }
 
-.bottom-box .animation {
-  background-color: rgba(217, 211, 211, 0.8);
+.bottom-box {
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: space-between;
+  width: 100vw !important;
+  padding: 0 50px !important;
+}
+
+// .bottom-box .animation {
+//   background-color: rgba(217, 211, 211, 0.8);
+// }
+
+.animation img {
+  object-fit: cover;
 }
 
 .bottom-body {

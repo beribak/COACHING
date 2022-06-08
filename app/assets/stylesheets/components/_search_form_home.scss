@@ -6,7 +6,7 @@
   }
 
   .searchTerm {
-    margin: 4px;
+    margin: 4px 0 4px 0!important;
     color:rgb(43, 18, 73);
     border-style:inherit;
     border-color: rgb(80, 82, 94);
@@ -15,9 +15,10 @@
     width: 75%;
     font-family: "Manrope", sans-serif;
     font-size: 15px;
-    padding: 4px;
+    padding: 0px !important;
+
   }
 
   .home-search {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.6);
   }
