@@ -16,6 +16,7 @@
           <li class="nav-item">
             <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
           </li>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         <% else %>
           <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link" %>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :lessons do
+    resources :questions, only: [:new, :create]
     resources :reviews
   end
 
