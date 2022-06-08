@@ -5,9 +5,7 @@
       <div class="bg-white my-4 py-3 px-4 shadow-lg rounded">
         <div class="d-flex justify-content-between align-items-center">
           <h2 class="m-0"><strong><%= @lesson.title %></strong></h2>
-
-          <h4 class="m-0"><span class="badge alert-success"><%= @lesson.places - @lesson.bookings.where(status: true).count %> places available</span></h4>
-
+          <h4 class="m-0"><span class="badge alert-primary"><%= @lesson.places %> places available</span></h4>
         </div>
       </div>
       <div class="rounded-5">
@@ -23,19 +21,16 @@
       </div>
     </div>
 
-
-
     <div class="col-4 mt-4" data-controller="answers">
       <%= render "shared/book_course" %>
       <%= render "shared/answer_question" %>
     </div>
 
-      <div>
+
       <ul class="list-group">
-        <% @lesson.reviews.each do |review| %>
-        <li class="list-group-item"><%= review.description %> <%= review.rating %></li>
-        <% end %>
-        </ul>
-    </div>
+          <% @lesson.reviews.each do |review| %>
+            <li class="list-group-item"><%= review.description %> <%= review.rating %></li>
+          <% end %>
+      </ul>
   </div>
 </div>

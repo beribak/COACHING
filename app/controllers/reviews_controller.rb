@@ -1,10 +1,17 @@
 class ReviewsController < ApplicationController
+  def new
+    @review = Review.new
+  end
+
   def create
     @review = Review.new(review_params)
-    @lesson = Lesson.find(params[:lesson_id])
-    @review.lesson = @lesson
-    @review.save
-    redirect_to lesson_path(@lesson)
+    @review.user = current_user
+    if @review.save
+      redirect_to new_review_path
+    else
+      flash[:alert] = "Something went wrong."
+      render :new
+    end
   end
 
   private
