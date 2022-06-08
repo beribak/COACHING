@@ -35,7 +35,6 @@
               <h4 class="m-2"><%= b.lesson.title %></h4>
               <h4 class="m-0"><span class="badge alert-success"><%= b.lesson.available_places  %> places available</span></h4>
             </div>
-
             <% current_user.bookings.where(status: false).each do |c|%>
 
               <div class="d-flex align-items-center justify-content-between">
@@ -45,8 +44,9 @@
                 </div>
                 <strong><p class="text-secondary my-2 text-center">Confirmed ✓</p></strong>
               </div>
-                        <div class="container">
-                            <div class="row">
+
+                <div class="container">
+                            <div class="row-1">
                             <div class="col-xs-4">
                               <%= simple_form_for [b.lesson, Review.new] do |f| %>
                                 <%= f.input :description %>
@@ -56,6 +56,8 @@
                               </div>
                              </div>
                       </div>
+
+
             <% end %>
           </div>
 

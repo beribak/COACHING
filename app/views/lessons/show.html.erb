@@ -16,9 +16,17 @@
         <div class="d-flex align-items-center justify-content-between">
           <h3 class="m-0">Description</h3>
           <h4 class="m-0"><span class="badge alert-success"><%= @lesson.category.name %></span></h4>
+
         </div>
         <p class="my-2"><%= @lesson.description %></p>
       </div>
+      <ul class="col-5  d-inline-block list-group">
+          <% @lesson.reviews.each do |review| %>
+          <div class="pt-2 rounded">
+            <li class="list-group-item"><%= review.description %> <%= review.rating %></li>
+            </div>
+          <% end %>
+      </ul>
     </div>
 
     <div class="col-4 mt-4" data-controller="answers">
@@ -27,10 +35,5 @@
     </div>
 
 
-      <ul class="list-group">
-          <% @lesson.reviews.each do |review| %>
-            <li class="list-group-item"><%= review.description %> <%= review.rating %></li>
-          <% end %>
-      </ul>
   </div>
 </div>
