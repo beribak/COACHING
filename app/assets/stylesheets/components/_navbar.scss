@@ -14,14 +14,16 @@
   width: 40px;
 }
 .navbar-brand {
-  font-family: ‘Manrope’, sans-serif;
-  font-weight: 500;
-  font-size: 25px !important;
+  font-family: "Source Serif Pro", sans-serif;
+  font-weight: 600;
+  font-size: 28px !important;
   color: rgb(63, 40, 75) !important;
 }
 .nav-item {
   color: rgb(50, 32, 59);
   margin-left: 20px;
+  font-family: "Source Serif Pro", sans-serif;
+  font-weight: 400;
 }
 .nav-link {
   color: rgb(50, 32, 59) !important;
@@ -30,7 +32,7 @@
   color: rgb(77, 107, 158) !important;
 }
 .dropdown-menu {
-  background-color: rgb(255, 246, 252) !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
   border: 0px !important;
   width: 30px !important;
   border-radius: 2px !important;
@@ -38,4 +40,8 @@
 }
 .dropdown-item{
   color: rgb(50, 32, 59) !important;
+}
+
+.nav-item .dropdown {
+  font-size: 36px;
 }

@@ -1,27 +1,9 @@
 // Import page-specific CSS files here.
 @import "home";
 
-.background {
-  background-image: url("blob-scene-haikei.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
 
 .index {
-
   height: 100vh;
-  // background-image: url("blob-scene-haikei.png");
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  z-index: 10;
-  position: relative;
-
 }
 
 .search {
@@ -38,24 +20,24 @@
   border-right: none;
   padding: 15px;
   height: 40px;
-  border-radius: 5px 0 0 5px;
+  border-radius: 3px 0 0 3px;
   outline: none;
   background-color: white;
   margin-left: 5px;
 }
 
 .searchTerm:focus {
-  color: rgb(115, 66, 138);
+  color: rgb(120, 50, 119);
 }
 
 .searchButton {
-  width: 150px;
+  width: 120px;
   height: 40px;
-  border: 1px solid rgb(115, 66, 138);
-  background: rgb(115, 66, 138);
+  border: 1px solid rgb(120, 50, 119);
+  background: rgb(120, 50, 119);
   text-align: center;
   color: #fff;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 3px 3px 0;
   cursor: pointer;
   font-size: 20px;
   margin-left: 50px;
@@ -65,18 +47,19 @@
 
   width: 250px;
   height: 40px;
-  border: 1px solid rgb(115, 66, 138);
+  border: 1px solid rgb(120, 50, 119);
   background: white;
   text-align: center;
   color: black;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 3px 3px 0;
   cursor: pointer;
   font-size: 20px;
   margin-left: 15px;
 }
 
 #bar {
-  background-color: rgb(115, 66, 138);
+  padding-left: 20px !important;
+  background-color: rgb(120, 50, 119);
   border-radius: 10px !important;
 }
 
