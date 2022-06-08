@@ -6,18 +6,20 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user = current_user
+    @lesson = Lesson.find(params[:lesson_id])
+    @review.lesson = @lesson
     if @review.save
-      redirect_to new_review_path
+      redirect_to "/dashboard"
     else
       flash[:alert] = "Something went wrong."
-      render :new
+      render "pages/dashboard"
     end
   end
 
   def avg_rating
     @review.average(:rating)
   end
-end
+
 
 
   private

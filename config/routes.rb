@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :lessons do
-    resources :reviews
+    resources :reviews, only: [:create]
   end
 
   patch ':id/accept_booking', to: 'pages#accept_booking', as: 'accept_booking'
