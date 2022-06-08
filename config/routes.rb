@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :lessons
+  resources :lessons do
+    resources :reviews
+  end
 
   patch ':id/accept_booking', to: 'pages#accept_booking', as: 'accept_booking'
 

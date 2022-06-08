@@ -110,6 +110,17 @@ ActiveRecord::Schema.define(version: 2022_06_07_124931) do
     t.index ["lesson_id"], name: "index_questions_on_lesson_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
+    t.integer "rating"
+    t.bigint "lesson_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_reviews_on_lesson_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -138,4 +149,6 @@ ActiveRecord::Schema.define(version: 2022_06_07_124931) do
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "questions", "lessons"
+  add_foreign_key "reviews", "lessons"
+  add_foreign_key "reviews", "users"
 end
