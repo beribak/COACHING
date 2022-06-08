@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
 puts "creating database"
 Answer.destroy_all
 User.destroy_all
@@ -59,5 +51,18 @@ q15 = Question.create!(content: "Whats the level of your Ruby at the moment?", l
 q16 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson6.id)
 q17 = Question.create!(content: "Why do you need to take this lesson ?", lesson_id: lesson6.id)
 q18 = Question.create!(content: "Whats the level of your Psycology at the moment?", lesson_id: lesson6.id)
+
+puts "creating reviews"
+
+review1 = Review.create( description:"Nice coach and lesson, the coach has a good approach to learning!", lesson_id: lesson1.id, user: user5, rating: 4 )
+review1 = Review.create( description:"Very nice coach and lesson, I suggest it !", lesson_id: lesson1.id, user: user6, rating: 5 )
+
+review2 = Review.create( description:"Good coach and lesson", lesson_id: lesson2.id, user: user6, rating: 3 )
+review1 = Review.create( description:"Nice coach and lesson, the coach has a good approach to learning!", lesson_id: lesson2.id, user: user7, rating: 4 )
+
+review3 = Review.create( description:"Very nice coach and lesson, I suggest it !", lesson_id: lesson3.id, user: user6, rating: 5 )
+review4 = Review.create( description:"Very nice coach and lesson, I suggest it !", lesson_id: lesson4.id, user: user6, rating: 5 )
+review5 = Review.create( description:"Good coach and lesson", lesson_id: lesson5.id, user: user7, rating: 3 )
+review6 = Review.create( description:"Nice coach and lesson, the coach has a good approach to learning!", lesson_id: lesson6.id, user: user7, rating: 4 )
 
 puts "finish seeding"
