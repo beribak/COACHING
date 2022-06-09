@@ -3,11 +3,11 @@
 
 
 .search {
-  width: 96%;
   position: relative;
   display: flex;
   padding-top: 10px;
-  border-radius: 10px;
+  justify-content: space-between;
+  width: 64%;
 }
 
 .searchTerm {
@@ -19,7 +19,7 @@
   border-radius: 3px 0 0 3px;
   outline: none;
   background-color: white;
-  margin-left: 5px;
+  font-size: 20px;
 }
 
 .searchTerm:focus {
@@ -29,11 +29,11 @@
 .searchButton {
   width: 120px;
   height: 40px;
-  border: 1px solid rgb(120, 50, 119);
-  background: rgb(120, 50, 119);
+  border: none;
+  background: white;
   text-align: center;
-  color: #fff;
-  border-radius: 0 3px 3px 0;
+  color: rgb(120, 50, 119);
+  border-radius: 0 2px 2px 0;
   cursor: pointer;
   font-size: 20px;
   margin-left: 50px;
@@ -43,11 +43,11 @@
 
   width: 250px;
   height: 40px;
-  border: 1px solid rgb(120, 50, 119);
+  border: none;
   background: white;
   text-align: center;
-  color: black;
-  border-radius: 0 3px 3px 0;
+  color: rgb(120, 50, 119);
+  border-radius: 0 2px 2px 0;
   cursor: pointer;
   font-size: 20px;
   margin-left: 15px;
@@ -55,8 +55,8 @@
 
 #bar {
   padding-left: 20px !important;
-  background-color: rgb(120, 50, 119);
-  border-radius: 10px !important;
+  background-color: white;
+  border-radius: 5px !important;
 }
 
 .container {

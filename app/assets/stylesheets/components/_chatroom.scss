@@ -16,7 +16,8 @@
 
   .messages {
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding: 1rem;
   }
 
@@ -29,4 +30,8 @@
     }
   }
 
+}
+
+.button-small {
+  height: 70%;
 }
