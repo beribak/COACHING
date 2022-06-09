@@ -5,7 +5,7 @@
       <div class="bg-white my-4 py-3 px-4 shadow-lg rounded">
         <div class="d-flex justify-content-between align-items-center">
           <h2 class="m-0"><strong><%= @lesson.title %></strong></h2>
-          <h4 class="m-0"><span class="badge alert-primary"><%= @lesson.available_places %> places available</span></h4>
+          <h4 class="m-0"><span class="badge alert-success"><%= @lesson.available_places %> places available</span></h4>
         </div>
       </div>
       <div class="rounded-5">
@@ -16,15 +16,18 @@
         <div class="d-flex align-items-center justify-content-between">
           <h3 class="m-">Description</h3>
           <h4 class="m-0"><span class="badge alert-success"><%= @lesson.category.name %></span></h4>
-          <div class="rating">
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+        <p class="my-2"><%= @lesson.description %></p>
+        <div class="rating">
             <% if @lesson.reviews.count.positive? %>
             <% all_ratings = @lesson.reviews.pluck(:rating) %>
             <% average = all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size %>
-            <%= (average * 2.0).round / 2.0 %> <i class="fas fa-star"></i>
+            <%= (average * 2.0).round / 2.0 %> <i class="fas fa-star text-warning"></i>
             <% end %>
-            </div>
+          </div>
         </div>
-        <p class="my-2"><%= @lesson.description %></p>
+
       </div>
 
     </div>
@@ -40,7 +43,7 @@
           <div class="pt-2 rounded">
             <li class="list-group-item"><%= review.description %><br>
             <% review.rating.times do %>
-              <i class='fas fa-star'></i>
+              <i class='fas fa-star text-warning'></i>
             <% end %>
             </li>
             </div>
