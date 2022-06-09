@@ -12,6 +12,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/dashboard";
 
 .background {
   background-image: url("blob-scene-haikei.png");
@@ -28,6 +29,8 @@
 .front-content {
   z-index: 10;
   position: relative;
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 .container {

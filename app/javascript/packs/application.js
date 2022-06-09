@@ -21,7 +21,10 @@ import "controllers"
 import "bootstrap"
 
 import { initStarRating } from '../plugins/init_star_rating';
+import { stickyNavbar } from '../plugins/init_stickyNavbar';
 
-document.addEventListener("turbolinks:load", () => {
-  initStarRating();
-})
+document.addEventListener('turbolinks:load', () => {
+  // call the function
+  initStarRating()
+  stickyNavbar()
+});
