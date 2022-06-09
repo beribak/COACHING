@@ -1,4 +1,5 @@
 puts "creating database"
+Message.destroy_all
 Review.destroy_all
 Booking.destroy_all
 Answer.destroy_all
