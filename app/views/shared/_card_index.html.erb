@@ -17,13 +17,13 @@
         <p class="my-0 mx-2"><strong><%= lesson.user.first_name %> <%= lesson.user.last_name %></strong></p>
 
       </div>
-      <div class="badge alert-danger"><%= lesson.places %>/10 places available</div>
+      <div class="badge alert-success"><%= lesson.available_places %> places available</div>
     </div>
-
-    <%# all_ratings = lesson.reviews.pluck(:rating) %>
-      <%# average = all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size %>
-      <%#= (average * 2.0).round / 2.0 %> <i class="fas fa-star"></i>
-
+    <% if lesson.reviews.count.positive? %>
+    <% all_ratings = lesson.reviews.pluck(:rating) %>
+      <% average = all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size %>
+      <%= (average * 2.0).round / 2.0 %> <i class="fas fa-star text-warning"></i>
+    <% end %>
     <div class="d-flex align-items-center justify-content-between mt-2 rounded" style="border-radius: 0 0 10px 10px; ">
       <h5 class="mt-2"><%= lesson.title %></h5>
       <p class="m-0"><%= lesson.start_date.strftime("%a %d %b") %> - <%= lesson.end_date.strftime("%a %d %b")  %></p>
