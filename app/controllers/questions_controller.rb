@@ -9,11 +9,7 @@ class QuestionsController < ApplicationController
     @lesson = Lesson.find(params[:lesson_id])
     @question.lesson = @lesson
     if @question.save
-      if @lesson.questions.count <= 2
-        redirect_to new_lesson_question_path(@lesson)
-      else
-        redirect_to dashboard_path
-      end
+      redirect_to dashboard_path
     else
       render :new
     end

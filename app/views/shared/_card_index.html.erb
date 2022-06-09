@@ -2,7 +2,12 @@
 <div class="mb-4" style="border-radius: 10px;">
   <div style="border-radius: 10px;">
     <%# <%= cl_image_tag @lesson.photo.key, style:"width: 400px; object-fit: cover;" %>
-    <%= image_tag "https://www.sgl28.com/wp-content/uploads/2020/10/ruby.jpeg", class:"rounded", style:"width: 401px; object-fit: cover; border-radius: 10px 10px 0 0 !important;" %>
+    <% if lesson.photo.present? %>
+      <%= cl_image_tag lesson.photo.key, class:"rounded", style:"width: 401px; object-fit: cover; border-radius: 10px 10px 0 0 !important;" %>
+    <% else %>
+      <%= image_tag "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3032&q=80", class:"rounded", style:"width: 401px; object-fit: cover; border-radius: 10px 10px 0 0 !important;" %>
+    <% end %>
+    <%#= image_tag "https://www.sgl28.com/wp-content/uploads/2020/10/ruby.jpeg", class:"rounded", style:"width: 401px; object-fit: cover; border-radius: 10px 10px 0 0 !important;" %>
   </div>
 
   <div class="bg-white p-4 rounded shadow-lg " style="width: 400px; height:150px; border-radius: 0 0 10px 10px !important;">
