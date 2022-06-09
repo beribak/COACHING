@@ -22,8 +22,8 @@
           <h4 class="m-0"><span class="badge alert-success"><%= @lesson.category.name %></span></h4>
         </div>
         <div class="d-flex align-items-center justify-content-between">
-        <p class="my-2"><%= @lesson.description %></p>
-        <div class="rating">
+          <p class="my-2" style="padding-right: 50px"><%= @lesson.description %></p>
+          <div class="rating" style="width: 20%">
             <% if @lesson.reviews.count.positive? %>
             <% all_ratings = @lesson.reviews.pluck(:rating) %>
             <% average = all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size %>
