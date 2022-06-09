@@ -120,7 +120,9 @@
             </div>
             <div class="d-flex align-items-center justify-content-start">
               <%= link_to "See course", lesson_path(b.lesson), class: "btn btn-primary w-25 m-2" %>
-              <%= link_to "Open Chat", chatroom_path(b), class: "btn btn-outline-primary w-25 m-2" %>
+              <% if Chatroom.find_by(name: b.lesson.title)%>
+                <%= link_to "Open Chat", chatroom_path(Chatroom.find_by(name: b.lesson.title).id), class: "btn btn-outline-primary w-25 m-2" %>
+              <% end %>
             </div>
 
 
@@ -131,30 +133,37 @@
         <% else %>
           <% current_user.lessons.each do |l| %>
             <% if l.bookings.where(status: true).count > 0 %>
-              <div class="m-3 p-3 bg-light shadow-1 rounded-5">
-                <div class="d-flex align-items-center justify-content-between">
-                  <h4 class="m-2"><%= l.title %></h4>
-                  <h4 class="m-0"><span class="badge alert-success"><%= l.available_places %> places available</span></h4>
-                </div>
-                <p class="m-2"><%= l.start_date.strftime("%a %d %b") %> - <%= l.end_date.strftime("%a %d %b") %></p>
-                <% l.bookings.where(status: true).each do |b|%>
-
+              <% if l.end_date >= Date.today %>
+                <div class="m-3 p-3 bg-light shadow-1 rounded-5">
                   <div class="d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center">
-                      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-small m-2" %>
-                      <p class="m-0"> <strong class= "m-0"><%= b.user.first_name %></strong></p class="m-0">
-                    </div>
-                    <strong><p class="text-secondary my-2 text-center">Confirmed ✓</p></strong>
+                    <h4 class="m-2"><%= l.title %></h4>
+                    <h4 class="m-0"><span class="badge alert-success"><%= l.available_places %> places available</span></h4>
                   </div>
+                  <p class="m-2"><%= l.start_date.strftime("%a %d %b") %> - <%= l.end_date.strftime("%a %d %b") %></p>
+                  <% l.bookings.where(status: true).each do |b|%>
 
-                <% end %>
-              </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="d-flex align-items-center">
+                        <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-small m-2" %>
+                        <p class="m-0"> <strong class= "m-0"><%= b.user.first_name %></strong></p class="m-0">
+                      </div>
+                      <strong><p class="text-secondary my-2 text-center">Confirmed ✓</p></strong>
+                    </div>
+                     <div class="d-flex align-items-center justify-content-start">
+                      <%= link_to "See course", lesson_path(b.lesson), class: "btn btn-primary w-25 m-2" %>
+                      <% if Chatroom.find_by(name: b.lesson.title)%>
+                        <%= link_to "Open Chat", chatroom_path(Chatroom.find_by(name: b.lesson.title).id), class: "btn btn-outline-primary w-25 m-2" %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
             <% end %>
           <% end %>
         <% end %>
       </div>
 
-      <div class="tab-pane fade show active" id="passed-tab-pane" role="tabpanel" aria-labelledby="passed-tab" tabindex="0">
+      <div class="tab-pane fade" id="passed-tab-pane" role="tabpanel" aria-labelledby="passed-tab" tabindex="0">
 
         <%# PASSED %>
 
@@ -169,7 +178,7 @@
                 <div class="d-flex align-items-center justify-content-between">
                   <h4 class="m-2"><%= b.lesson.title %></h4>
                   <h4 class="m-0"><span class="badge alert-danger">Past</span></h4>
-                </div>_
+                </div>
                 <% current_user.bookings.where(status: true).each do |c|%>
 
                   <div class="d-flex align-items-center justify-content-between">
@@ -192,7 +201,7 @@
             <% end %>
 
         <% end %>
-        </div>
+
         <%# COACH %>
       <% end %>
       </div>
