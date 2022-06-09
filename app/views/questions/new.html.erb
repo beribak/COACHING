@@ -2,7 +2,7 @@
   <div class="form_new">
     <div class = "d-flex justify-content-between">
       <h4 style="margin-bottom: 30px;">Ask potential student a question:</h4>
-      <p class="mt-1 text-secondary"><%= @questions.count %>/3 questions</p>
+
     </div>
     <%= simple_form_for @question, url: polymorphic_path([:lesson, @question]) do |f| %>
 

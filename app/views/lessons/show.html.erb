@@ -10,31 +10,37 @@
       </div>
       <div class="rounded-5">
         <%# <%= cl_image_tag @lesson.photo.key, height: 225px;, width: 100, crop: :fill, class: "object-fit-cover'" %>
-        <%= image_tag "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3032&q=80", class:"w-100 rounded", style:"height: 300px; object-fit: cover;" %>
+        <% if @lesson.photo.present? %>
+          <%= cl_image_tag @lesson.photo.key, style:"height: 300px; object-fit: cover; width: 100%;", crop: :fill %>
+        <% else %>
+          <%= image_tag "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3032&q=80", class:"w-100 rounded", style:"height: 300px; object-fit: cover;" %>
+        <% end %>
       </div>
       <div class="bg-white my-4 py-3 px-4 shadow-lg rounded">
         <div class="d-flex align-items-center justify-content-between">
           <h3 class="m-0">Description</h3>
           <h4 class="m-0"><span class="badge alert-success"><%= @lesson.category.name %></span></h4>
           <div class="rating">
-            <% all_ratings = @lesson.reviews.pluck(:rating) %>
-            <% average = all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size %>
-            <%= (average * 2.0).round / 2.0 %> <i class="fas fa-star"></i>
+            <%# all_ratings = @lesson.reviews.pluck(:rating) %>
+            <%# average = all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size %>
+            <%#= (average * 2.0).round / 2.0 %> <i class="fas fa-star"></i>
             </div>
         </div>
         <p class="my-2"><%= @lesson.description %></p>
       </div>
-      <ul class="col-5  d-inline-block list-group">
-          <% @lesson.reviews.each do |review| %>
-          <div class="pt-2 rounded">
-            <li class="list-group-item"><%= review.description %>
-            <% review.rating.times do %>
-              <i class='fas fa-star'></i>
-            <% end %>
-            </li>
+      <div>
+        <ul class="w-100 d-inline-block list-group">
+            <% @lesson.reviews.each do |review| %>
+            <div class="pt-2 rounded">
+              <li class="list-group-item"><%= review.description %>
+                <% review.rating.times do %>
+                <i class='fas fa-star text-warning'></i>
+              <% end %>
+              </li>
             </div>
-          <% end %>
-      </ul>
+            <% end %>
+        </ul>
+      </div>
     </div>
 
     <div class="col-4 mt-4" data-controller="answers">

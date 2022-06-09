@@ -22,12 +22,31 @@ category2 = Category.create( name:"Programming" )
 category3 = Category.create( name:"Life Coaching" )
 
 puts "creating lessons"
+file1 = URI.open('https://media.istockphoto.com/photos/multiethnic-group-of-children-and-english-concept-picture-id511281043?s=612x612')
 lesson1 = Lesson.create!( user: user1, category: category1, title: "English / beginner", description: "English lesson for beginners", places: 10, start_date: "2023-02-04", end_date: "2023-05-04", address: "37 Rue Rodier, 75009 Paris, France")
+lesson1.photo.attach(io: file1, filename: 'nes1.png', content_type: 'image/png')
+
+file2 = URI.open('https://cdn.vanclan.co/wp-content/uploads/2018/07/sportsmobile-four-by-four-09-759x500.jpg')
 lesson2 = Lesson.create!( user: user2, category: category2, title: "Ruby / beginner", description: "Ruby lesson for beginners", places: 10, start_date: "2023-02-04", end_date: "2023-05-04", address: "32 Rue Blanche, 75009 Paris, France")
+lesson2.photo.attach(io: file2, filename: 'nes2.png', content_type: 'image/png')
+
+file3 = URI.open('https://cdn.vanclan.co/wp-content/uploads/2018/07/sportsmobile-four-by-four-09-759x500.jpg')
 lesson3 = Lesson.create!( user: user3, category: category3, title: "Psycology / beginner", description: "Psycology lesson for beginners", places: 10, start_date: "2023-02-04", end_date: "2023-05-04", address: "25-1 Rue de Miromesnil, 75008 Paris, France")
+lesson3.photo.attach(io: file3, filename: 'nes3.png', content_type: 'image/png')
+
+file4 = URI.open('https://media.istockphoto.com/photos/multiethnic-group-of-children-and-english-concept-picture-id511281043?s=612x612')
 lesson4 = Lesson.create!( user: user1, category: category1, title: "English / advance", description: "English  for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "37 Rue Rodier, 75009 Paris, France")
+lesson4.photo.attach(io: file4, filename: 'nes4.png', content_type: 'image/png')
+
+file5 = URI.open('https://cdn.vanclan.co/wp-content/uploads/2018/07/sportsmobile-four-by-four-09-759x500.jpg')
 lesson5 = Lesson.create!( user: user2, category: category2, title: "Ruby  / adavance", description: "Ruby lesson for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "32 Rue Blanche, 75009 Paris, France")
+lesson5.photo.attach(io: file5, filename: 'nes5.png', content_type: 'image/png')
+
+file6 = URI.open('https://cdn.vanclan.co/wp-content/uploads/2018/07/sportsmobile-four-by-four-09-759x500.jpg')
 lesson6 = Lesson.create!( user: user3, category: category3, title: "Psycology  / advance", description: "Psycology lesson for advance", places: 10, start_date: "2023-03-04", end_date: "2023-02-06", address: "25-1 Rue de Miromesnil, 75008 Paris, France")
+lesson6.photo.attach(io: file6, filename: 'nes6.png', content_type: 'image/png')
+
+
 
 puts "creating questions"
 q1 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson1.id)
