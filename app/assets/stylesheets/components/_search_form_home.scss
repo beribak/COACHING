@@ -1,9 +1,17 @@
 .btn-primary {
-    background-color: rgb(120, 50, 119) !important;
+    background-color: #783277 !important;
     border: none !important;
     color: white;
     width: 75%;
   }
+
+    .btn-outline-primary {
+      background-color: rgb(243, 243, 243) !important;
+      border: 2px;
+      border-color: #783277;
+      color: #783277;
+      width: 75%;
+    }
 
   .searchTerm {
     margin: 4px 0 4px 0!important;

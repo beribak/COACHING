@@ -41,6 +41,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new(lesson_params)
     @lesson.user = current_user
     if @lesson.save
+      Chatroom.create(name: @lesson.title)
       redirect_to new_lesson_question_path(@lesson)
     else
       render :new
