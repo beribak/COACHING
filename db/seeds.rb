@@ -1,11 +1,11 @@
 puts "creating database"
-Question.destroy_all
 Review.destroy_all
 Booking.destroy_all
 User.destroy_all
 Lesson.destroy_all
 Category.destroy_all
 Answer.destroy_all
+Question.destroy_all
 
 
 puts "creating users"
