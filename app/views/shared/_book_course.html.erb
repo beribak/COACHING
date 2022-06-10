@@ -6,10 +6,22 @@
     <p class="text-secondary mb-1"><small>OFFERED BY</small></p>
     <div class="d-flex justify-content-between align-items-center">
       <div class="m-0">
-        <h5 class="mb-1 fw-bold"><%= @lesson.user.first_name %> <%= @lesson.user.last_name %></h5>
+        <div class="d-flex align-items-center">
+        <h5 class="mb-1 mr-1 fw-bold"><%= @lesson.user.first_name %> <%= @lesson.user.last_name %></h5>
+
+        <div class="rating m-1" style="width: 20%">
+          <% if @lesson.reviews.count.positive? %>
+          <% all_ratings = @lesson.reviews.pluck(:rating) %>
+          <% average = all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size %>
+          <%= (average * 2.0).round / 2.0 %> <i class="fas fa-star text-warning"></i>
+          <% end %>
+        </div>
+        </div>
+
         <p class="m-0"><%= @lesson.user.description %></p>
+
       </div>
-      <div class="m-2"><%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-medium" %></div>
+      <div class="m-2"><%= image_tag "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80", class: "avatar-medium", style: "object-fit: cover" %></div>
     </div>
 
   </div>

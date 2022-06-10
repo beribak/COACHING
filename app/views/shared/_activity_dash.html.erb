@@ -193,13 +193,13 @@
                 <% end %>
 
 
-                <div class="container">
+                <div class="">
                             <div class="row">
-                            <div class="col-6">
+                            <div class="col-12">
                               <%= simple_form_for [b.lesson, Review.new] do |f| %>
                                 <%= f.input :description, style: "width: 20% !important;" %>
                                 <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-                                <%= f.submit "Send your review" %>
+                                <%= f.submit "Send your review", class: "btn btn-primary w-100" %>
                               <% end %>
                               </div>
                              </div>

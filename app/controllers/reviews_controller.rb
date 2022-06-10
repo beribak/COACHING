@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @lesson = Lesson.find(params[:lesson_id])
     @review.lesson = @lesson
     if @review.save
-      redirect_to "/dashboard"
+      redirect_to lesson_path(@lesson)
     else
       flash[:alert] = "Something went wrong."
       render "pages/dashboard"

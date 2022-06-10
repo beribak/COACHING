@@ -9,8 +9,8 @@ Answer.destroy_all
 
 
 puts "creating users"
-user1 = User.create( first_name: "Alijah", last_name: "Proctor", email: "alijahl@gmail.com", password: "Lewagon123", description: "Hello! I am Alijah and I have been teaching engish for more then 7 yers now, teaching all sorts of ages, from kids to elderly.", coach: true, refugee: false )
-user2 = User.create( first_name: "Barbara", last_name: "Adkins", email: "barbara@gmail.com", password: "Lewagon123", description: "Hello! I am Barbara and I have been a freelance web developer/UX designer for 8 years. I have passin for technology, I love hiking and do kickboxing on the weekends", coach: true, refugee: false )
+user1 = User.create( first_name: "Alijah", last_name: "Proctor", email: "alijahl@gmail.com", password: "Lewagon123", description: "Hello! I am Alijah and I have been teaching engish for more than 7 yers now, teaching all sorts of ages, from kids to elderly.", coach: true, refugee: false )
+user2 = User.create( first_name: "Barbara", last_name: "Adkins", email: "barbara@gmail.com", password: "Lewagon123", description: "Hello! I am Barbara and I have been a freelance web developer/UX designer for 8 years. I have passion for technology, I love hiking and do kickboxing on the weekends", coach: true, refugee: false )
 user3 = User.create( first_name: "Fiona", last_name: "Fields", email: "fiona@gmail.com", password: "Lewagon123", description: "Hello! I am Fiona and I have worked as a clinical psychologist for 12 years, as wel as a life coach for the last 3 years..", coach: true, refugee: false )
 
 
@@ -28,7 +28,7 @@ category5 = Category.create( name:"Life Coaching" )
 
 puts "creating lessons"
 file1 = URI.open('https://images.unsplash.com/photo-1543832923-44667a44c804?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1644&q=80')
-lesson1 = Lesson.create!( user: user1, category: category1, title: "English / beginner", description: "I have been teaching engish for more then 7 yers now, teaching all sorts of ages, from kids to elderly. I would love to help those newcomers who form from wars and conflict to save their lives and ended up in Netherlands. I have a small office space that can fit 10 people, that will serve as a setting for our classes.", places: 10, start_date: "2022-07-04", end_date: "2022-11-04", address: "Bloemstraat, Amsterdam")
+lesson1 = Lesson.create!( user: user1, category: category1, title: "English / beginner", description: "I have been teaching engish for more then 7 yers now, teaching all sorts of ages, from kids to elderly. I would love to help those newcomers who form from wars and conflict to save their lives and ended up in Netherlands. I have a small office space that can fit 10 people, that will serve as a setting for our classes.", places: 10, start_date: "2022-05-04", end_date: "2022-06-04", address: "Bloemstraat, Amsterdam")
 lesson1.photo.attach(io: file1, filename: 'nes1.png', content_type: 'image/png')
 
 file2 = URI.open('https://images.unsplash.com/photo-1618335829737-2228915674e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
@@ -50,6 +50,8 @@ lesson5.photo.attach(io: file5, filename: 'nes5.png', content_type: 'image/png')
 file6 = URI.open('https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2099&q=80')
 lesson6 = Lesson.create!( user: user3, category: category5, title: "Life Reseting", description: "I have worked as a clinical psychologist for 12 years, as wel as a life coach for the last 3 years.  I would like to offer my service free of charcge to people tramatised by was in Ukraine, who have to start their lifes from scratch in a new foregn environment", places: 6, start_date: "2022-06-15", end_date: "2023-08-15", address: "Kerkstraat, Amsterdam")
 lesson6.photo.attach(io: file6, filename: 'nes6.png', content_type: 'image/png')
+
+booking1 = Booking.create!(status: true, user: user8, lesson: lesson1)
 
 
 
