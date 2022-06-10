@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :reviews, through: :lessons
   has_many :bookings, dependent: :destroy
   has_many :answers, dependent: :destroy
+  has_many :messages, dependent: :destroy
 end
