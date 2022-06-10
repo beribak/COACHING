@@ -9,15 +9,9 @@ Answer.destroy_all
 
 
 puts "creating users"
-<<<<<<< HEAD
 user1 = User.create( first_name: "Alijah", last_name: "Proctor", email: "alijahl@gmail.com", password: "Lewagon123", description: "Hello! I am Alijah and I have been teaching engish for more than 7 yers now, teaching all sorts of ages, from kids to elderly.", coach: true, refugee: false )
 user2 = User.create( first_name: "Barbara", last_name: "Adkins", email: "barbara@gmail.com", password: "Lewagon123", description: "Hello! I am Barbara and I have been a freelance web developer/UX designer for 8 years. I have passion for technology, I love hiking and do kickboxing on the weekends", coach: true, refugee: false )
 user3 = User.create( first_name: "Fiona", last_name: "Fields", email: "fiona@gmail.com", password: "Lewagon123", description: "Hello! I am Fiona and I have worked as a clinical psychologist for 12 years, as wel as a life coach for the last 3 years..", coach: true, refugee: false )
-=======
-user1 = User.create( first_name: "Denis", last_name: "Proctor", email: "alijahl@gmail.com", password: "Lewagon123", description: "Hello! I am Alijah and I have been teaching English and Dutch for more then 7 years now, working with all ages, from kids to elderly.", coach: true, refugee: false )
-user2 = User.create( first_name: "Barbara", last_name: "Adkins", email: "barbara@gmail.com", password: "Lewagon123", description: "Hello! I am Barbara and I have been a freelance web developer/UX designer for 8 years. I have a passion for technology, I love hiking and do kickboxing on the weekends", coach: true, refugee: false )
-user3 = User.create( first_name: "Fiona", last_name: "Fields", email: "fiona@gmail.com", password: "Lewagon123", description: "Hello! I am Fiona and I have worked as a clinical psychologist for 12 years, as well as a life coach for the last 3 years..", coach: true, refugee: false )
->>>>>>> 202f558d75c6721c8302707daa545730b2613b73
 
 
 user5 = User.create( first_name: "Marley", last_name: "Hoover", email: "marley@gmail.com", password: "Lewagon123", description: "Hello! I am Marley, I come from Syria", coach: false, refugee: true )
