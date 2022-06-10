@@ -4,8 +4,7 @@ Booking.destroy_all
 User.destroy_all
 Lesson.destroy_all
 Category.destroy_all
-Answer.destroy_all
-Question.destroy_all
+
 
 
 puts "creating users"
@@ -55,17 +54,7 @@ booking1 = Booking.create!(status: true, user: user8, lesson: lesson1)
 
 
 puts "creating questions"
-q1 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson1.id)
 
-q4 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson2.id)
-
-q7 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson3.id)
-
-q10 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson4.id)
-
-q13 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson5.id)
-
-q16 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson6.id)
 
 puts "creating reviews"
 
