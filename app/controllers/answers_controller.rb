@@ -9,7 +9,7 @@ class AnswersController < ApplicationController
     @booking = Booking.create!(status: false, user_id: current_user.id, lesson_id: @lesson.id)
 
     if @answer.save
-      redirect_to lesson_path(@lesson)
+      redirect_to dashboard_path
     else
       render template: "lessons/show"
     end
