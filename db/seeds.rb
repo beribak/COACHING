@@ -32,7 +32,7 @@ lesson1 = Lesson.create!( user: user1, category: category1, title: "English / be
 lesson1.photo.attach(io: file1, filename: 'nes1.png', content_type: 'image/png')
 
 file2 = URI.open('https://images.unsplash.com/photo-1618335829737-2228915674e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
-lesson2 = Lesson.create!( user: user2, category: category2, title: "Intro Into Web Dev", description: "Hey there, have you found yourself in a new environment, struggling to apply your current skills in a job marke? Would you like to learn new skills, develop a new lucrative career or simply become more tech savvy. Come and join our small local class, which will give you a intro in web development, using basic HTML, CSS, Javascript", places: 6, start_date: "2023-06-25", end_date: "2023-08-21", address: "Egelantiersstraat ,Amsterdam")
+lesson2 = Lesson.create!( user: user2, category: category2, title: "Intro Into Web Dev", description: "Hey there, have you found yourself in a new environment, struggling to apply your current skills in a job marke? Would you like to learn new skills, develop a new lucrative career or simply become more tech savvy. Come and join our small local class, which will give you a intro in web development, using basic HTML, CSS, Javascript", places: 6, start_date: "2023-06-25", end_date: "2023-08-21", address: "Egelantiersstraat, Amsterdam")
 lesson2.photo.attach(io: file2, filename: 'nes2.png', content_type: 'image/png')
 
 file3 = URI.open('https://images.unsplash.com/photo-1573511860302-28c524319d2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
