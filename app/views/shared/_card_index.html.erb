@@ -1,9 +1,9 @@
 
-<div class="mb-4" style="border-radius: 4px;">
+<div class="m-3" style="border-radius: 4px;">
   <div style="border-radius: 4px;">
     <%# <%= cl_image_tag @lesson.photo.key, style:"width: 400px; object-fit: cover;" %>
     <% if lesson.photo.present? %>
-      <%= cl_image_tag lesson.photo.key, class:"rounded", style:"height: 401px; width: 100%; object-fit: cover; border-radius: 4px 4px 0 0 !important;" %>
+      <%= cl_image_tag lesson.photo.key, class:"rounded", style:"height: 250px; width: 100%; object-fit: cover; border-radius: 4px 4px 0 0 !important;" %>
     <% else %>
       <%= image_tag "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3032&q=80", class:"rounded", style:"width: 401px; object-fit: cover; border-radius: 10px 10px 0 0 !important;" %>
     <% end %>
@@ -13,20 +13,20 @@
   <div class="bg-white p-4 rounded shadow-lg " style="width: 100%; height:100%; border-radius: 0 0 4px 4px !important;">
     <div class="d-flex align-items-center justify-content-between rounded">
       <div class="d-flex align-items-center rounded">
-        <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-small" %>
+        <%= image_tag "https://source.unsplash.com/random", class: "avatar-small" %>
         <p class="my-0 mx-2"><strong><%= lesson.user.first_name %> <%= lesson.user.last_name %></strong></p>
-
+        <% if lesson.reviews.count.positive? %>
+        <% all_ratings = lesson.reviews.pluck(:rating) %>
+          <% average = all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size %>
+          <%= (average * 2.0).round / 2.0 %> <i class="m-1 fas fa-star text-warning"></i>
+        <% end %>
       </div>
       <div class="badge alert-success"><%= lesson.available_places %> places available</div>
     </div>
-    <% if lesson.reviews.count.positive? %>
-    <% all_ratings = lesson.reviews.pluck(:rating) %>
-      <% average = all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size %>
-      <%= (average * 2.0).round / 2.0 %> <i class="fas fa-star text-warning"></i>
-    <% end %>
+
     <div class="d-flex align-items-center justify-content-between mt-2 rounded" style="border-radius: 0 0 4px 4px; ">
-      <h5 class="mt-2"><%= lesson.title %></h5>
-      <p class="m-0"><%= lesson.start_date.strftime("%a %d %b") %> - <%= lesson.end_date.strftime("%a %d %b")  %></p>
+      <h5 class="mt-2 font-weight-bold"><%= lesson.title %></h5>
+      <p class="m-0"><%= lesson.start_date.strftime("%d %b") %> - <%= lesson.end_date.strftime("%d %b")  %></p>
     </div>
   </div>
 </div>
