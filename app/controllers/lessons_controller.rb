@@ -3,7 +3,14 @@ class LessonsController < ApplicationController
 
     category = Category.find_by(name: params[:category])
 
-    if params[:category].present? && params[:city].present?
+    if params[:category] == "All" && params[:city].present?
+      lessons_city = Lesson.near(params[:city], 20)
+      @lessons = []
+      Lesson.all.each do |lesson|
+        @lessons << lesson if lessons_city.include?(lesson)
+      end
+
+    elsif params[:category].present? && params[:city].present?
       lessons_city = Lesson.near(params[:city], 20)
       lessons_cat  = Lesson.where(category: category)
 

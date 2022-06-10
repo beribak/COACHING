@@ -9,7 +9,7 @@
           placeholder: "Choose the location"
         %>
         <%= select_tag :category,
-          options_for_select(Category.pluck(:name)),
+          options_for_select(Category.pluck(:name) << "All"),
           class: "searchTerm",
           placeholder: "Choose the category"
         %>
