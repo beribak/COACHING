@@ -55,6 +55,18 @@ booking1 = Booking.create!(status: true, user: user8, lesson: lesson1)
 
 puts "creating questions"
 
+q1 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson1.id)
+
+q2 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson2.id)
+
+q3 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson3.id)
+
+q4 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson4.id)
+
+q5 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson5.id)
+
+q6 = Question.create!(content: "Please introduce yourself!", lesson_id: lesson6.id)
+
 
 puts "creating reviews"
 
